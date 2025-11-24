@@ -1,0 +1,25 @@
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    namespace "com.webview.app"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.webview.app"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release { minifyEnabled false }
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
