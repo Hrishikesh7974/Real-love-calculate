@@ -1,0 +1,21 @@
+workflows:
+  android-app:
+    name: Build Android WebView App
+    max_parallel_builds: 1
+    environment:
+      sdk: "android"
+      java: "17"
+    scripts:
+      - name: Clean project
+        script: ./gradlew clean
+      
+      - name: Build APK
+        script: ./gradlew assembleRelease
+
+    artifacts:
+      - app/build/outputs/**/*.apk
+
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
